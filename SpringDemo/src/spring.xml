@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:annotation-config/>
+    <context:component-scan base-package="org.javabrains6"/>
+    
 	<bean id="triangle" class="org.javabrains6.Triangle">
 		<property name="pointA" ref="pointA"></property>
 		<property name="pointB" ref="pointB"></property>
@@ -9,8 +18,9 @@
 	</bean>
 	
 	<bean id="pointA" class="org.javabrains6.Point">
-		<property name="x" value="${pointA.pointX}"></property>
-		<property name="y" value="${pointA.pointY}"></property>
+		<qualifier value="circleRelated"/>
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
 	</bean>
 	
 	<bean id="pointB" class="org.javabrains6.Point">
@@ -23,14 +33,10 @@
 		<property name="y" value="0"></property>
 	</bean>
 	
-<!-- 	<bean class="org.javabrains4.DisplayNameBeanPostProcessor"/> -->
-<!-- 	<bean class="org.javabrains4.MyBeanFactoryPostProcessor"/> -->
-	<bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-		<property name="locations" value="pointsConfig.properties"/>
-	</bean>
+ 
 	
-	<bean id="circle" class="org.javabrains6.Circle">
-		<property name="center" ref="pointA"></property>
-	</bean>
+<!-- 	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/> -->
+
+<!-- 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
 	
 </beans>
