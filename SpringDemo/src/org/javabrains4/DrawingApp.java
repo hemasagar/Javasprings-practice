@@ -13,5 +13,4 @@ public class DrawingApp {
 				
 		((ClassPathXmlApplicationContext)context).close();
 	}
-
 }

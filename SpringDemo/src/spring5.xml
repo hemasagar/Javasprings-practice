@@ -2,23 +2,23 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-	<bean id="triangle" class="org.javabrains6.Triangle">
+	<bean id="triangle" class="org.javabrains5.Triangle">
 		<property name="pointA" ref="pointA"></property>
 		<property name="pointB" ref="pointB"></property>
 		<property name="pointC" ref="pointC"></property>
 	</bean>
 	
-	<bean id="pointA" class="org.javabrains6.Point">
+	<bean id="pointA" class="org.javabrains5.Point">
 		<property name="x" value="${pointA.pointX}"></property>
 		<property name="y" value="${pointA.pointY}"></property>
 	</bean>
 	
-	<bean id="pointB" class="org.javabrains6.Point">
+	<bean id="pointB" class="org.javabrains5.Point">
 		<property name="x" value="-20"></property>
 		<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="pointC" class="org.javabrains6.Point">
+	<bean id="pointC" class="org.javabrains5.Point">
 		<property name="x" value="20"></property>
 		<property name="y" value="0"></property>
 	</bean>
@@ -29,7 +29,7 @@
 		<property name="locations" value="pointsConfig.properties"/>
 	</bean>
 	
-	<bean id="circle" class="org.javabrains6.Circle">
+	<bean id="circle" class="org.javabrains5.Circle">
 		<property name="center" ref="pointA"></property>
 	</bean>
 	
