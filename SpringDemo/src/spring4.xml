@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
-<beans>
-	<bean id="triangle" class="org.javabrains4.Triangle">
-		<property name="pointA" ref="pointA"></property>
-		<property name="pointB" ref="pointB"></property>
-		<property name="pointC" ref="pointC"></property>
+<beans default-init-method="myInit" default-destroy-method="cleanUp">
+	<bean id="triangle" class="org.javabrains3.Triangle" autowire="byName">
 	</bean>
-	<bean id="pointA" class="org.javabrains4.Point">
+	<bean id="pointA" class="org.javabrains3.Point">
 		<property name="x" value="0"></property>
 		<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="pointB" class="org.javabrains4.Point">
+	<bean id="pointB" class="org.javabrains3.Point">
 		<property name="x" value="-20"></property>
 		<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="pointC" class="org.javabrains4.Point">
+	<bean id="pointC" class="org.javabrains3.Point">
 		<property name="x" value="20"></property>
 		<property name="y" value="0"></property>
-	</bean>
-	
-	<bean class="org.javabrains4.DisplayNameBeanPostProcessor">
 	</bean>
 </beans>
