@@ -2,51 +2,21 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-	<!-- <bean id="triangle" class="org.javabrains1.Triangle">
-		<property name="pointA" ref="zeroPoint"></property>
-		<property name="pointB" ref="point2"></property>
-		<property name="pointC" ref="point3"></property>
+	<bean id="triangle" class="org.javabrains1.Triangle" autowire="byName" >
 	</bean>
 	
-	<bean id="zeroPoint" class="org.javabrains1.Point">
+	<bean id="pointA" class="org.javabrains1.Point">
 		<property name="x" value="0"></property>
 		<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="point2" class="org.javabrains1.Point">
+	<bean id="pointB" class="org.javabrains1.Point">
 		<property name="x" value="-20"></property>
 		<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="point3" class="org.javabrains1.Point">
+	<bean id="pointC" class="org.javabrains1.Point">
 		<property name="x" value="20"></property>
 		<property name="y" value="0"></property>
-	</bean> -->
-	
-	<bean id="triangle" class="org.javabrains1.Triangle" name="triangle-name triangle-type ">
-<!-- 		<property name="pointA" ref="zeroPoint"></property> -->
-		<property name="pointA"> 
-			<idref="zeroPoint"/>
-		</property>
-		<property name="pointB">
-			<bean class="org.javabrains1.Point">
-				<property name="x" value="-20"></property>
-				<property name="y" value="0"></property>
-			</bean>
-		</property>
-		<property name="pointC">
-			<bean class="org.javabrains1.Point">
-				<property name="x" value="20"></property>
-				<property name="y" value="0"></property>
-			</bean>
-		</property>
 	</bean>
-	
-	<bean id="zeroPoint" class="org.javabrains1.Point">
-		<property name="x" value="0"></property>
-		<property name="y" value="0"></property>
-	</bean>
-	
-	<alias name="triangle" alias="triangle-alias"/>
-
 </beans>
